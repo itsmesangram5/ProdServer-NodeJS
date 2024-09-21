@@ -24,12 +24,13 @@ app.use("/api/v1/auth", require("./routes/userRoutes"));
 app.use("/api/v1/post", require("./routes/postRoutes"));
 
 //home
-app.get("/",(eq,res)=>[
+app.get("/", (req, res) => {
   res.status(200).send({
-    "success":true,
-    "msg":"Server is running"
-  ])
-  })
+    success: true,
+    msg: "Server is running"
+  });
+});
+
 
 //PORT
 const PORT = process.env.PORT || 8080;
